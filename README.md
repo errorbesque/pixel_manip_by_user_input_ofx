@@ -1,7 +1,11 @@
 # pixel_manip_by_user_input_ofx
-ofx -- have image in (or later, possibly video) and allow the user's input to determine styling/tuning of pixel manipulation. 
+given input image, allow user's mouse dragging to replicate pixels in target direction. 
+
+ofxgui options:
+pixel direction (4 cardinal directions + 4 hybrids)
+pixel jitter
+
+demo image (post user manipulation):
+<img src = "demooutput.png">
 
 my first real ofx project ~ 
-
-demo image (after user manipulation of original image):
-<img src = "demooutput.png">
