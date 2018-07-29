@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "ofPoint.h"
-#include "ofxDelaunay2D.h"
+#include "ofxGui.h"
 
 #include "ofImage.h"
 #include "ofxCvImage.h"
@@ -33,22 +33,23 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+        vector<ofPoint> getPixelsBetweenPoints(ofPoint p1, ofPoint p2);
     
-        void extrudePixels();
-        bool InsidePolygon(vector<ofPoint> polygon, int N, ofPoint p);
+        void guiChanged(int &test1);
 		
     ofPoint myMouse;
     ofPoint tempPoint;
     vector<ofPoint> pointVect; //
-    vector<ofVec2f> m_points;
-    float vectDistanceThreshold = 20;
-    int whichMode = 0;
-    int pixelExtrusionDirection = 1;
-    vector<int> max_x;
+    vector<ofPoint> pointVectToPixels; //
+    vector<int> timeOfPointVect;
+
+    int framenum = 0;
     
     ofImage r1,r2;
     ofPixels pixels;
     
-    protected:
-        ofMesh m_triangulation;
+    ofxPanel gui;
+    ofxIntSlider extrude_x;
+    ofxIntSlider extrude_y;
+    ofxIntSlider jitter_on;
 };
